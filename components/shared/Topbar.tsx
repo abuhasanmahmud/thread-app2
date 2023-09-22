@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Topbar = () => {
-  console.log("topbar");
+  // console.log("topbar");
   return (
     <>
       <nav className="topbar">
