@@ -24,7 +24,7 @@ async function page({ params }: { params: { id: string } }) {
   return (
     <section className="relative">
       <div>
-        {/* <ThreadCard
+        <ThreadCard
           id={thread._id}
           currentUserId={user.id}
           parentId={thread.parentId}
@@ -33,15 +33,15 @@ async function page({ params }: { params: { id: string } }) {
           community={thread.community}
           createdAt={thread.createdAt}
           comments={thread.children}
-        /> */}
+        />
       </div>
 
       <div className="mt-7">
-        {/* <Comment
+        <Comment
           threadId={params.id}
           currentUserImg={user.imageUrl}
           currentUserId={JSON.stringify(userInfo._id)}
-        /> */}
+        />
       </div>
 
       <div className="mt-10">
