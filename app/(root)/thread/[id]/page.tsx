@@ -5,6 +5,7 @@ import { currentUser } from "@clerk/nextjs";
 import ThreadCard from "@/components/cards/ThreadCard";
 
 import { fetchUser } from "@/lib/actions/user.actions";
+import { fetchThreadById } from "@/lib/actions/thread.actions";
 // import { fetchThreadById } from "@/lib/actions/thread.actions";
 
 export const revalidate = 0;
@@ -18,8 +19,8 @@ async function page({ params }: { params: { id: string } }) {
   const userInfo = await fetchUser(user.id);
   if (!userInfo?.onboarded) redirect("/onboarding");
 
-  // const thread = await fetchThreadById(params.id);
-
+  const thread = await fetchThreadById(params.id);
+  console.log("thread in thread id page", thread);
   return (
     <section className="relative">
       <div>
