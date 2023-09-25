@@ -12,6 +12,7 @@ export const revalidate = 0;
 
 async function page({ params }: { params: { id: string } }) {
   if (!params.id) return null;
+  console.log();
 
   const user = await currentUser();
   if (!user) return null;
