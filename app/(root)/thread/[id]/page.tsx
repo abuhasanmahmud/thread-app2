@@ -1,18 +1,17 @@
 import { redirect } from "next/navigation";
 import { currentUser } from "@clerk/nextjs";
 
-// import Comment from "@/components/forms/Comment";
+import Comment from "@/components/forms/Comment";
 import ThreadCard from "@/components/cards/ThreadCard";
 
 import { fetchUser } from "@/lib/actions/user.actions";
 import { fetchThreadById } from "@/lib/actions/thread.actions";
-// import { fetchThreadById } from "@/lib/actions/thread.actions";
 
 export const revalidate = 0;
 
 async function page({ params }: { params: { id: string } }) {
   if (!params.id) return null;
-  console.log();
+  // console.log();
 
   const user = await currentUser();
   if (!user) return null;
@@ -21,7 +20,7 @@ async function page({ params }: { params: { id: string } }) {
   if (!userInfo?.onboarded) redirect("/onboarding");
 
   const thread = await fetchThreadById(params.id);
-  console.log("thread in thread id page", thread);
+  // console.log("thread in thread id page", thread);
   return (
     <section className="relative">
       <div>
